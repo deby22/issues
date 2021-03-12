@@ -20,7 +20,7 @@ defmodule CLITest do
   test "sort descending orders the correct way" do
     result = sort_into_descending_order(fake_created_list(["c", "a", "b"]))
     issues = for issue <- result, do: Map.get(issue, "created_at")
-    assert issues == ~w{c, b, a}
+    assert issues == ~w{c b a}
   end
 
   defp fake_created_list(values) do
