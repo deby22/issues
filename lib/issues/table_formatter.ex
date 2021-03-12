@@ -17,8 +17,8 @@ defmodule Issues.TableFormatter do
     end
   end
 
-  defp printable(str) when is_binary(str), do: str
-  defp printable(str), do: to_string(str)
+  def printable(str) when is_binary(str), do: str
+  def printable(str), do: to_string(str)
 
   def widths_of(columns) do
     for column <- columns, do: column |> map(&String.length/1) |> max()
